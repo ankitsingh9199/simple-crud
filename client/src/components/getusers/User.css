@@ -1,0 +1,236 @@
+/* General Styles */
+body {
+    background-color: #f4f6f9;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Table Container */
+.userTable {
+    width: 90%;
+    background-color: white;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    margin: 50px auto;
+    padding: 30px;
+    overflow: hidden;
+}
+
+/* Responsive Table Wrapper */
+.userTable .table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling for small screens */
+}
+
+/* Table */
+.userTable table {
+    width: 100%;
+    min-width: 600px; /* Ensures table does not break in small screens */
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+/* Table Head */
+.userTable table thead tr th {
+    background-color: #002147;
+    color: white;
+    padding: 14px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid #004085;
+}
+
+/* Table Body */
+.userTable table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background 0.3s ease-in-out;
+}
+
+.userTable table tbody tr:nth-child(even) {
+    background-color: #f9fbfd;
+}
+
+.userTable table tbody tr:hover {
+    background-color: #eaf2ff;
+}
+
+.userTable table tbody td {
+    padding: 12px;
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+}
+
+/* Action Buttons */
+.actionButton {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap; /* Ensures buttons don't overflow on small screens */
+}
+
+.actionButton button,
+.actionButton a {
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Edit & Delete Button */
+.actionButton .editbutton {
+    background-color: #007bff;
+    color: white;
+}
+
+.actionButton .deletebutton {
+    background-color: #dc3545;
+    color: white;
+}
+
+.actionButton .editbutton:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.actionButton .deletebutton:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Add Button */
+.addbutton {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #28a745;
+    color: white;
+    font-weight: 700;
+    padding: 12px 18px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    margin-bottom:12px;
+}
+
+.addbutton:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    gap: 10px;
+}
+
+.pagination button {
+    padding: 10px 16px;
+    font-size: 14px;
+    border: none;
+    background-color: #004085;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.pagination button:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #002147;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .userTable {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .userTable {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .userTable .table-wrapper {
+        overflow-x: auto; /* Enables scrolling on mobile */
+    }
+
+    .userTable table {
+        font-size: 14px;
+    }
+
+    .userTable table thead tr th {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .userTable table tbody td {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .addbutton {
+        padding: 10px 15px;
+        font-size: 14px;
+        width: 100%; /* Full width for mobile */
+        text-align: center;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .pagination button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .userTable {
+        padding: 15px;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .userTable .table-wrapper {
+        overflow-x: auto; /* Ensures table scrolls on small screens */
+    }
+
+    .userTable table {
+        min-width: 600px; /* Prevents table from breaking */
+    }
+
+    .actionButton {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .addbutton {
+        width: 100%;
+        text-align: center;
+    }
+
+    .pagination {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .pagination button {
+        width: 100%;
+    }
+}
